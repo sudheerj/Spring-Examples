@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+ 
+	<bean id="CsvOutputGenerator" class="com.sudheer.output.impl.CsvOutputGenerator" />
+	<bean id="ExcelOutputGenerator" class="com.sudheer.output.impl.ExcelOutputGenerator" />
+	<bean id="PDFOutputGenerator" class="com.sudheer.output.impl.PDFOutputGenerator" />
+	<bean id="XMLOutputGenerator" class="com.sudheer.output.impl.XMLOutputGenerator" />
+	<bean id="JsonOutputGenerator" class="com.sudheer.output.impl.JsonOutputGenerator" />
+
+</beans>
