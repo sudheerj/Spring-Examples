@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="BaseCustomerIndia" abstract="true">
+		<property name="country" value="India" />
+	</bean>
+
+	<bean id="CustomerBean" parent="BaseCustomerIndia" class="com.sudheer.common.Customer">
+		<!-- <property name="country" value="Russia" /> -->
+		<property name="action" value="buy" />
+		<property name="type" value="1" />
+	</bean>
+
+</beans>
