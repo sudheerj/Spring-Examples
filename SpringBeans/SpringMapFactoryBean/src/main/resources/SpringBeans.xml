@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+	<bean id="CustomerBean" class="com.sudheer.common.Customer">
+		<property name="maps">
+			<util:map map-class="java.util.HashMap">
+				<entry key="Key1" value="1" />
+				<entry key="Key2" value="2" />
+				<entry key="Key3" value="3" />
+			</util:map>
+		</property>
+	</bean>
+	<!-- <bean class="org.springframework.beans.factory.config.MapFactoryBean">
+				<property name="targetMapClass">
+					<value>java.util.HashMap</value>
+				</property>
+				<property name="sourceMap">
+					<map>
+						<entry key="Key1" value="1" />
+						<entry key="Key2" value="2" />
+						<entry key="Key3" value="3" />
+					</map>
+				</property>
+			</bean> -->
+
+</beans>
