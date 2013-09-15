@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+ 
+	<bean id="CustomerBean" class="com.sudheer.common.Customer">
+		<constructor-arg>
+			<bean class="com.sudheer.common.Person">
+				<property name="name" value="sudheer" />
+				<property name="address" value="address" />
+				<property name="age" value="26" />
+			</bean>
+		</constructor-arg>
+	</bean>
+</beans>
