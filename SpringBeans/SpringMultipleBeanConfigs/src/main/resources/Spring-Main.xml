@@ -1,0 +1,14 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="OutputHelper" class="com.sudheer.output.OutputHelper">
+		<property name="outputGenerator" >
+		   <ref bean="PDFOutputGenerator" />
+		</property>
+	</bean>
+	    <import resource="pdf/Spring-PDF.xml"/>
+        <import resource="excel/Spring-Excel.xml"/>
+        <import resource="csv/Spring-Csv.xml"/>
+</beans>
