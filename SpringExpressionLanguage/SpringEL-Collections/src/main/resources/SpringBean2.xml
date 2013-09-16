@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="customerBean" class="com.sudheer.core.Customer">
+		<property name="mapA" value="#{testBean.map['MapA']}" />
+		<property name="list" value="#{testBean.list[0]}" />
+	</bean>
+ 
+	<bean id="testBean" class="com.sudheer.core.Test" />
+	
+</beans>
