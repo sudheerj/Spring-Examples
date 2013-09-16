@@ -1,0 +1,18 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="customerBean" class="com.sudheer.core.Customer">
+		<property name="address" value="#{addressBean}" />
+		<property name="country" value="#{addressBean.country}" />
+		<property name="fullAddress" value="#{addressBean.getFullAddress('sudheer')}" />
+	</bean>
+ 
+	<bean id="addressBean" class="com.sudheer.core.Address">
+		<property name="street" value="Block ABC, LakeView" />
+		<property name="postcode" value="98700" />
+		<property name="country" value="US" />
+	</bean>
+	
+</beans>
