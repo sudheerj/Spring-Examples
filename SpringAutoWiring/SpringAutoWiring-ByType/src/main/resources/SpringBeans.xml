@@ -1,0 +1,16 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="person" class="com.sudheer.common.Person" autowire="byType" />
+		
+	<!-- <bean id="steal" class="com.sudheer.common.Ability" >
+		<property name="skill" value="Steal" />
+	</bean> -->
+	
+	<bean id="invisible" class="com.sudheer.common.Ability" >
+		<property name="skill" value="Invisible" />
+	</bean>
+
+</beans>
