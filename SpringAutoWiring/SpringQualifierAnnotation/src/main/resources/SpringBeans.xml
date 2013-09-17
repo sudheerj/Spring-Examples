@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	
+	<bean id="customer" class="com.sudheer.common.Customer" >
+		<property name="action" value="buy" />
+		<property name="type" value="1" />
+	</bean>
+		
+	<bean id="personA" class="com.sudheer.common.Person" >
+		<property name="name" value="sudheerA" />
+	</bean>
+	
+	<bean id="personB" class="com.sudheer.common.Person" >
+		<property name="name" value="sudheerB" />
+	</bean>
+
+</beans>
