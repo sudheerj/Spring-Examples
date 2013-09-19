@@ -1,0 +1,58 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd 
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd ">
+
+	<aop:aspectj-autoproxy />
+
+	<bean id="customerBo" class="com.sudheer.customer.bo.impl.CustomerBoImpl" />
+
+	<!-- Aspect -->
+	<bean id="logAspect" class="com.sudheer.aspect.LoggingAspect" />
+
+	<aop:config>
+
+		<aop:aspect id="aspectLoggging" ref="logAspect" >
+
+			<!-- @Before -->
+			<aop:pointcut id="pointCutBefore"
+				expression="execution(* com.sudheer.customer.bo.CustomerBo.addCustomer(..))" />
+
+			<aop:before method="logBefore" pointcut-ref="pointCutBefore" />
+			
+			<!-- @After -->
+			<aop:pointcut id="pointCutAfter"
+				expression="execution(* com.sudheer.customer.bo.CustomerBo.addCustomer(..))" />
+
+			<aop:after method="logAfter" pointcut-ref="pointCutAfter" />
+			
+			<!-- @AfterReturning -->
+			<aop:pointcut id="pointCutAfterReturning"
+				expression="execution(* com.sudheer.customer.bo.CustomerBo.addCustomerReturnValue(..))" />
+
+			<aop:after-returning method="logAfterReturning" returning="result" 
+				pointcut-ref="pointCutAfterReturning" />
+			
+			
+			<!-- @AfterThrowing -->
+			<aop:pointcut id="pointCutAfterThrowing"
+				expression="execution(* com.sudheer.customer.bo.CustomerBo.addCustomerThrowException(..))" />
+			
+			<aop:after-throwing method="logAfterThrowing" throwing="error" 
+				pointcut-ref="pointCutAfterThrowing"  />
+			
+			
+			<!-- @Around -->
+			<aop:pointcut id="pointCutAround"
+				expression="execution(* com.sudheer.customer.bo.CustomerBo.addCustomerAround(..))" />
+			
+			<aop:around method="logAround" pointcut-ref="pointCutAround"  />
+			
+		</aop:aspect>
+
+	</aop:config>
+
+
+</beans>
