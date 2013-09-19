@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customer age="26">
+	<flag>true</flag>
+	<name>sudheer</name>
+	<address>This is address</address>
+</customer>

@@ -1,0 +1,22 @@
+<mapping>
+	<class name="com.sudheer.core.model.Customer">
+
+		<map-to xml="customer" />
+
+		<field name="age" type="integer">
+			<bind-xml name="age" node="attribute" />
+		</field>
+
+		<field name="flag" type="boolean">
+			<bind-xml name="flag" node="element" />
+		</field>
+
+		<field name="name" type="string">
+			<bind-xml name="name" node="element" />
+		</field>
+
+		<field name="address" type="string">
+			<bind-xml name="address" node="element" />
+		</field>
+	</class>
+</mapping>
