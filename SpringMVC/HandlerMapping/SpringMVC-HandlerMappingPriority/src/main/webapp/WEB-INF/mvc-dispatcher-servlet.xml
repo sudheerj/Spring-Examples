@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<value>
+			/index.htm=welcomeController
+			/welcome.htm=welcomeController
+			/main.htm=welcomeController
+			/home.htm=welcomeController
+			</value>
+		</property>
+		<property name="order" value="0" />
+	</bean>
+	
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" >
+		<property name="caseSensitive" value="true" />
+		<property name="order" value="1" />
+	</bean>	
+	
+	<bean id="welcomeController" 
+		class="com.sudheer.common.controller.WelcomeController" />
+		
+	<bean class="com.sudheer.common.controller.HelloGuestController" />
+	
+	<bean id="viewResolver"
+    	class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+
+</beans>
