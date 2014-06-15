@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-	<!-- <bean id="dateEditor"
+	 <bean id="dateEditor"
 		class="org.springframework.beans.propertyeditors.CustomDateEditor">
 
 		<constructor-arg>
@@ -24,12 +24,12 @@ http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 			</map>
 		</property>
 	</bean>
-
-	<bean id="customer" class="com.sudheer.common.Customer">
+	 
+    <bean id="customer" class="com.sudheer.common.Customer">
 		<property name="date" value="2013-09-15" />
 	</bean>
 	<!-- Spring factory-bean for Date injection -->
-	<!-- <bean id="dateFormat" class="java.text.SimpleDateFormat">
+	<!--  <bean id="dateFormat" class="java.text.SimpleDateFormat">
 		<constructor-arg value="yyyy-MM-dd" />
 	</bean>
  
